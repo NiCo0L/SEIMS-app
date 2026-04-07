@@ -6,7 +6,7 @@
         <div class="col-lg-5">
             <div class="brand-panel p-5 mb-4">
                 <p class="text-uppercase small mb-2">SEIMS</p>
-                <h2 class="mb-3">Private agricultural inventory control</h2>
+                <h2 class="mb-3">PBBD agricultural inventory control</h2>
                 <p class="mb-0 text-white-50">Track consumable supplies, equipment status, transaction histories, and reports from a single Laravel-based system.</p>
             </div>
         </div>
