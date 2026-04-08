@@ -37,7 +37,7 @@
         <label class="form-label">Status</label>
         <select name="status" class="form-select" required>
             @foreach ($statusOptions as $value => $label)
-                <option value="{{ $value }}" @selected(old('status', $equipment->status ?? 'good') == $value)>{{ $label }}</option>
+                <option value="{{ $value }}" @selected(old('status', $equipment->status ?? 'serviceable') == $value)>{{ $label }}</option>
             @endforeach
         </select>
     </div>

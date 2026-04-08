@@ -21,19 +21,18 @@ class SeimsSeeder extends Seeder
         );
 
         foreach ([
-            ['name' => 'Main Warehouse', 'location' => 'Central Campus', 'description' => 'Primary agricultural supply storage'],
-            ['name' => 'Field Warehouse', 'location' => 'North Farm', 'description' => 'Field operations storage'],
-            ['name' => 'Equipment Shed', 'location' => 'South Block', 'description' => 'Hand tools and small equipment storage'],
+            ['name' => 'BSP Warehouse', 'location' => 'BSP', 'description' => 'Field operations storage'],
+            ['name' => 'NSP Warehouse', 'location' => 'NSP', 'description' => 'Primary agricultural supply storage'],
+            ['name' => 'FTR Warehouse', 'location' => 'FTR', 'description' => 'Secondary agricultural supply storage'],
         ] as $warehouse) {
             Warehouse::updateOrCreate(['name' => $warehouse['name']], $warehouse);
         }
 
         foreach ([
             'Fertilizers',
-            'Seeds',
+            'Agricultural Supplies',
             'Chemicals',
-            'Irrigation Supplies',
-            'Protective Gear',
+            'Office Supplies',
         ] as $category) {
             SupplyCategory::updateOrCreate(['name' => $category], ['description' => $category.' stock group']);
         }
@@ -41,6 +40,8 @@ class SeimsSeeder extends Seeder
         foreach ([
             ['name' => 'Kilogram', 'symbol' => 'kg'],
             ['name' => 'Liter', 'symbol' => 'L'],
+            ['name' => 'Milliliter', 'symbol' => 'mL'],
+            ['name' => 'Grams', 'symbol' => 'g'],
             ['name' => 'Piece', 'symbol' => 'pc'],
             ['name' => 'Sack', 'symbol' => 'sack'],
             ['name' => 'Box', 'symbol' => 'box'],
@@ -49,9 +50,9 @@ class SeimsSeeder extends Seeder
         }
 
         $equipmentMap = [
-            'Field Machinery' => ['Tractor', 'Power Tiller'],
+            'Field Machinery' => ['Tractor', 'Cutter', 'Harvester'],
             'Irrigation Equipment' => ['Water Pump', 'Sprayer'],
-            'Workshop Tools' => ['Generator', 'Chainsaw'],
+            'Seed Processing Equipment' => ['Moisture Meter', 'Caliper'],
         ];
 
         foreach ($equipmentMap as $categoryName => $types) {

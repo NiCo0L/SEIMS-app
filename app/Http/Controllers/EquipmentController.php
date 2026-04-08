@@ -87,7 +87,7 @@ class EquipmentController extends Controller
     public function status(Request $request, EquipmentItem $equipment)
     {
         $validated = $request->validate([
-            'status' => ['required', 'in:good,maintenance_pre,maintenance_post,transferred,condemned'],
+            'status' => ['required', 'in:serviceable,for_repair,unserviceable,transferred,condemned'],
             'status_date' => ['required', 'date'],
             'document_number' => ['required', 'string', 'max:100'],
             'remarks' => ['nullable', 'string'],
@@ -197,7 +197,7 @@ class EquipmentController extends Controller
             'document_number' => ['required', 'string', 'max:100'],
             'control_number' => ['required', 'string', 'max:100'],
             'person_in_charge' => ['required', 'string', 'max:255'],
-            'status' => ['required', 'in:good,maintenance_pre,maintenance_post,transferred,condemned'],
+            'status' => ['required', 'in:serviceable,for_repair,unserviceable,transferred,condemned'],
             'last_status_date' => ['nullable', 'date'],
             'remarks' => ['nullable', 'string'],
         ]);

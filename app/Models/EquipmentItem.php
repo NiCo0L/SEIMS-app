@@ -30,9 +30,9 @@ class EquipmentItem extends Model
     public static function statusOptions(): array
     {
         return [
-            'good' => 'Good condition',
-            'maintenance_pre' => 'Under maintenance (pre-repair)',
-            'maintenance_post' => 'Under maintenance (post-repair)',
+            'serviceable' => 'Serviceable',
+            'for_repair' => 'For-repair',
+            'unserviceable' => 'Unserviceable',
             'transferred' => 'Transferred',
             'condemned' => 'Condemned',
         ];

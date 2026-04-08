@@ -80,9 +80,9 @@ return new class extends Migration
             $table->foreignId('equipment_type_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('document_number')->unique();
-            $table->string('control_number')->unique();
+            $table->string('control_number');
             $table->string('person_in_charge');
-            $table->enum('status', ['good', 'maintenance_pre', 'maintenance_post', 'transferred', 'condemned'])->default('good');
+            $table->enum('status', ['serviceable', 'for_repair', 'unserviceable', 'transferred', 'condemned'])->default('serviceable');
             $table->date('last_status_date')->nullable();
             $table->text('remarks')->nullable();
             $table->timestamps();
@@ -92,7 +92,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('equipment_item_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
-            $table->enum('status', ['good', 'maintenance_pre', 'maintenance_post', 'transferred', 'condemned']);
+            $table->enum('status', ['serviceable', 'for_repair', 'unserviceable', 'transferred', 'condemned']);
             $table->date('status_date');
             $table->string('document_number');
             $table->text('remarks')->nullable();
