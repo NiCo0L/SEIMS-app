@@ -37,7 +37,6 @@ class EquipmentItem extends Model
             'condemned' => 'Condemned',
         ];
     }
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(EquipmentCategory::class, 'equipment_category_id');
